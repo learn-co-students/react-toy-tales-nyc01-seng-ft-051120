@@ -10,7 +10,7 @@
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 15
     },
     {
       "id": 3,
@@ -47,6 +47,12 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Salty",
+      "image": "https://cdn3.volusion.com/9nxdj.fchy5/v/vspfiles/photos/DG-2473-2.jpg?v-cache=1594393707",
+      "likes": 7,
+      "id": 9
     }
   ]
 }
