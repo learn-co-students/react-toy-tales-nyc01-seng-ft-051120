@@ -12,6 +12,7 @@ class ToyForm extends Component {
   }
 
   handleSubmit = e => {
+    e.preventDefault()
     fetch('http://localhost:3000/toys', {
       method: 'POST',
       headers: {
