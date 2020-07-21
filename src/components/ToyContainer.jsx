@@ -6,8 +6,8 @@ class ToyContainer extends React.Component {
       toys: this.props.toys
     }
 
-    patchToy = (e) => {
-      console.log(e)
+    patchToy = e => {
+
       fetch(`http://localhost:3000/toys/${e.id}`, {
       method: 'PATCH',
       headers: {
@@ -18,12 +18,11 @@ class ToyContainer extends React.Component {
           likes: e.likes + 1
        })
      })
-     // console.log(this.props)
       this.props.fetch()
     }
 
-    deleteToy = (e) => {
-      console.log(e)
+    deleteToy = e => {
+
       fetch(`http://localhost:3000/toys/${e}`, {
       method: 'DELETE',
       headers: {
@@ -36,12 +35,10 @@ class ToyContainer extends React.Component {
           likes: 0
        })
      })
-     // console.log(this.props)
       this.props.fetch()
     }
 
   render(){
-
   return(
     <div id="toy-collection">
       {this.props.toys.map((toy, index) =>

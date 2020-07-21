@@ -16,6 +16,10 @@ class App extends React.Component{
       this.fetchToys()
   }
 
+  addToy = pokemon => {
+    this.setState ({ toys: [...this.state.toys, pokemon]})
+  }
+
   fetchToys = () => {
     fetch('http://localhost:3000/toys')
     .then(res => res.json())
@@ -23,7 +27,9 @@ class App extends React.Component{
         this.setState({ toys: data})
     })
   }
-  postToy(e) {
+
+  postToy = (e, toy) => {
+    e.preventDefault()
     fetch('http://localhost:3000/toys', {
     method: 'POST',
     headers: {
@@ -31,12 +37,15 @@ class App extends React.Component{
        Accept: 'application/json'
     },
     body: JSON.stringify({
-        name: e.name,
-        image: e.image,
+        name: toy.name,
+        image: toy.image,
         likes: 0
      })
    })
-
+   .then(res => res.json())
+   .then(toy => {
+     this.addToy(toy)
+   })
   }
 
   handleClick = () => {
@@ -47,7 +56,6 @@ class App extends React.Component{
   }
 
   render(){
-    console.log(this.state)
     return (
       <>
         <Header/>

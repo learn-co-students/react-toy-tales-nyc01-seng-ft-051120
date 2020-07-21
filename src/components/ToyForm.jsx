@@ -17,7 +17,7 @@ updateImage = (e) => {
   render() {
     return (
       <div className="container">
-        <form onSubmit={()=> this.props.postToy(this.state)}className="add-toy-form">
+        <form onSubmit={(e)=> this.props.postToy(e, this.state)}className="add-toy-form">
           <h3>Create a toy!</h3>
           <input onChange={this.updateName} type="text" name="name" placeholder="Enter a toy's name..." className="input-text"/>
           <br/>
